@@ -2,6 +2,75 @@
 An Elo-aware chess opening specialist trained on human rapid games.
 Status: Early development. A rapid-PGN data pipeline, Elo-aware statistical move predictor, evaluation workflow, and CLI are implemented. Neural models, repertoire search, and engine verification below remain goals.
 
+### Progress so far
+
+The first working development milestone is complete:
+
+- Python package and CLI (`ingest`, `train`, `evaluate`, and `predict`).
+- Streaming PGN ingestion, validated position/move/rating JSONL records,
+  disk-backed game deduplication, deterministic whole-game splits, and dataset manifests.
+- A smoothed statistical move predictor using 200-point rating buckets, with
+  pooled-position and uniform-legal-move fallbacks when data is sparse.
+- Held-out move accuracy and negative log-likelihood reports by Elo band.
+- A synthetic demo dataset and saved baseline workflow, plus automated tests
+  (133 tests recorded at the first milestone).
+
+The files in `data/demo/` are generated from synthetic games. They exercise the
+workflow; they do not measure real player behavior. `checkpoints/demo.json` is
+the saved statistical baseline, not a neural network. No real-game benchmark,
+trained neural network, repertoire search, or Stockfish verification is complete yet.
+
+### Next milestone: four rating groups
+
+The first real-data experiment will target **50,000 games per group**, or
+approximately **200,000 games overall**, from a downloaded Lichess monthly
+archive. The model should support all four groups, including strong play and
+lower-rated opponent behavior.
+
+The proposed boundaries below turn the target ratings into usable ranges.
+They are planning defaults to confirm before implementing the sampler; these
+four groups are not yet supported by the CLI.
+
+| Group label | Lichess rapid rating | Training games | Validation games | Test games | Total |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 500 | Below 750 | 40,000 | 5,000 | 5,000 | 50,000 |
+| 1000 | 750–1249 | 40,000 | 5,000 | 5,000 | 50,000 |
+| 1500 | 1250–1849 | 40,000 | 5,000 | 5,000 | 50,000 |
+| 2200 | 1850 and above | 40,000 | 5,000 | 5,000 | 50,000 |
+| **Total target** | | **160,000** | **20,000** | **20,000** | **200,000** |
+
+These are approximate 80/10/10 split targets, subject to available qualifying
+games. Group labels are representative ratings, not exact-rating filters or
+minimum ratings; for example, the proposed 2200 group includes players below 2200.
+Each move-prediction example uses the rating of the player making that move.
+Mixed-group games can contribute examples to multiple groups, so the sampler
+must define quota attribution and report unique-game and per-group counts
+separately. The 200,000 total is a planning target, not a guarantee of that many
+distinct games under overlapping group membership. Every game must remain in
+one split across all groups to prevent leakage.
+
+### Immediate next steps
+
+1. Store the planned roughly 31 GB `.pgn.zst` download in `data/raw/`.
+   Raw archives and generated datasets are already excluded from Git. Keep the
+   archive compressed and stream it; full extraction is unnecessary.
+2. Add configurable rating groups and per-group accepted-game quotas to
+   ingestion. Define mixed-group quota attribution, preserve whole-game split
+   isolation, and record sampling rules and coverage in the manifest.
+   The current CLI processes the supplied archive without a game-count limit.
+3. Run a small real-data pilot to verify rapid filtering, ratings, deduplication,
+   disk usage, processing speed, and group coverage before the full run.
+4. Build the four-group dataset in a new directory such as `data/rapid_v1/`,
+   targeting 50,000 games per group and reporting any shortfalls.
+5. Train and evaluate the statistical baseline on real data, compare pooled and
+   rating-aware predictions, and report performance and coverage for every group.
+   Choose settings on validation data and reserve test data for final comparisons.
+6. Implement one rating-conditioned neural model trained across all four groups,
+   compare the planned compact CNN and transformer against the baseline, and
+   evaluate each group separately.
+7. After move prediction is validated, add branching repertoire search and
+   Stockfish soundness checks.
+
 ### Run the first working prototype
 
 Requires Python 3.11 or newer. From the repository root:
@@ -115,7 +184,7 @@ Planned source: Lichess Open Database and other appropriately licensed sources i
 - Use rapid games only for the primary training corpus.
 - Retain opening moves, positions, player ratings, game results, and available time-control metadata.
 - Parse, validate, filter, and deduplicate records where appropriate.
-- Start with 100,000 games, then expand through 1M → 10M → 50M → 200M based on measured value.
+- Start with approximately 200,000 games across four rating groups (50,000 per group), then expand through 1M → 10M → 50M → 200M based on measured value.
 - Hold out entire games for validation and testing; use time-based holdouts to check performance on more recent play.
 - Avoid leakage from repeated positions, overlapping game records, and future-game information.
 - Track coverage by Elo band, opening family, and time control; account for sparse positions and sampling bias.
@@ -136,7 +205,7 @@ Reproducibility	Versioned datasets, configuration, seeds, metrics, and checkpoin
 Historical win rate is not proof of causation: player strength, selection bias, and the rest of the game affect results. Reliability criteria and numerical acceptance thresholds will be set before major experiments.
 Development roadmap
 - [x] Phase 1 — Foundations: Define data schemas, reproducible experiments, evaluation criteria, and the repository structure.
-- [ ] Phase 2 — Data prototype: Process and verify the first 100,000 rapid games; create position/move/rating training records.
+- [ ] Phase 2 — Data prototype: Process and verify the first four-group rapid dataset (target: 50,000 games per group); create position/move/rating training records.
 - [ ] Phase 3 — Baselines: Implement rating-aware opening statistics and a simple move predictor.
 - [ ] Phase 4 — Neural prototype: Train and compare a compact CNN and rating-conditioned transformer on held-out games.
 - [ ] Phase 5 — Repertoire generator: Build opening-tree search with transpositions, branching coverage, and Stockfish verification.
@@ -148,7 +217,7 @@ Development roadmap
 Implemented groundwork for phases 2–3: streaming PGN ingestion, validated
 JSONL records, deterministic game-level splits, disk-backed deduplication,
 manifest generation, a smoothed rating-aware frequency policy, and held-out
-accuracy/NLL reports by Elo band. The 100,000-game real-data milestone and
+accuracy/NLL reports by Elo band. The four-group real-data milestone and
 baseline comparisons have not been run.
 Planned tech stack
 Technology choices are provisional and will be finalized during implementation.
