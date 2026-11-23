@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# Experiment outputs
+checkpoints/*.pt
+checkpoints/*.pth
+checkpoints/*.ckpt
+runs/
+wandb/
+
+# Data and generated files
+data/*
+!data/.gitkeep
+*.parquet
+*.pgn
+*.pgn.zst
+
+# OS / editor
+.DS_Store
+.vscode/

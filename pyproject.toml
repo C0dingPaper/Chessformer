@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chessformer"
+version = "0.1.0"
+description = "Elo-aware chess opening repertoire specialist"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Chessformer contributors" }]
+dependencies = [
+    "numpy>=2.0,<3",
+    "python-chess>=1.999,<2",
+]
+
+[project.optional-dependencies]
+data = ["polars>=1.0,<2", "pyarrow>=16,<22", "zstandard>=0.23,<0.26"]
+ml = ["torch>=2.5,<3", "tensorboard>=2.18,<3"]
+api = ["fastapi>=0.115,<1", "pydantic>=2.10,<3", "uvicorn>=0.32,<1"]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-cov>=6,<7",
+    "ruff>=0.8,<1",
+    "mypy>=1.13,<2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chessformer"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
