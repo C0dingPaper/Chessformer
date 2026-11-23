@@ -1,6 +1,45 @@
 ## Chessformer
 An Elo-aware chess opening specialist trained on human rapid games.
-Status: Planning / early development. The architecture, training approach, and features below are goals, not claims of a completed model.
+Status: Early development. A rapid-PGN data pipeline, Elo-aware statistical move predictor, evaluation workflow, and CLI are implemented. Neural models, repertoire search, and engine verification below remain goals.
+
+### Run the first working prototype
+
+Requires Python 3.11 or newer. From the repository root:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[dev]'
+
+# A small synthetic fixture exercises the workflow; it is not a real-game benchmark.
+python -m chessformer ingest examples/rapid_sample.pgn --output data/demo
+python -m chessformer train --data data/demo/train.jsonl --output checkpoints/demo.json
+python -m chessformer evaluate --model checkpoints/demo.json --data data/demo/validation.jsonl
+python -m chessformer predict --model checkpoints/demo.json --elo 1200 --top-k 5
+```
+
+The installed `chessformer` command is equivalent to `python -m chessformer`.
+Ingestion, training, and metrics output paths must be new; use a new destination
+for another experiment. For real local Lichess `.pgn.zst` archives, install
+`python -m pip install -e '.[data]'` first, then pass the archive to `ingest`.
+No game download or GPU is required for the demo.
+
+The baseline counts moves by position and 200-point Elo bucket, backs off to
+pooled position counts, and uses a uniform legal distribution for unseen
+positions. Predictions include observation counts and the fallback source.
+These are human-move estimates, not engine-approved opening recommendations.
+Use validation data to choose settings, and reserve `test.jsonl` for the final
+comparison. See [the dataset contract and experiment plan](docs/experiments.md)
+for filtering rules, split guarantees, evaluation metrics, and limitations.
+
+Development checks:
+
+```bash
+python -m pytest
+ruff check src tests
+ruff format --check src tests
+mypy src
+```
 
 Overview
 Chess Opening AI is an independent machine-learning project that aims to generate sound, practical, rating-specific opening repertoires. Inspired by the practical opening preparation offered by Lotus Chess, the system will learn how humans play the opening at different rapid ratings, identify likely inaccuracies, and construct branching lines designed to perform well against real opponents.
@@ -96,7 +135,7 @@ Reproducibility	Versioned datasets, configuration, seeds, metrics, and checkpoin
 
 Historical win rate is not proof of causation: player strength, selection bias, and the rest of the game affect results. Reliability criteria and numerical acceptance thresholds will be set before major experiments.
 Development roadmap
-- [ ] Phase 1 — Foundations: Define data schemas, reproducible experiments, evaluation criteria, and the repository structure.
+- [x] Phase 1 — Foundations: Define data schemas, reproducible experiments, evaluation criteria, and the repository structure.
 - [ ] Phase 2 — Data prototype: Process and verify the first 100,000 rapid games; create position/move/rating training records.
 - [ ] Phase 3 — Baselines: Implement rating-aware opening statistics and a simple move predictor.
 - [ ] Phase 4 — Neural prototype: Train and compare a compact CNN and rating-conditioned transformer on held-out games.
@@ -105,6 +144,12 @@ Development roadmap
 - [ ] Phase 7 — Advanced experiments: Evaluate outcome/mistake heads and, optionally, reinforcement learning against simulated opponents.
 - [ ] Phase 8 — Independent validation: Test performance, calibration, robustness, and reliability against established baselines.
 - [ ] Phase 9 — Future CMC integration: Expose a stable inference interface only after standalone validation.
+
+Implemented groundwork for phases 2–3: streaming PGN ingestion, validated
+JSONL records, deterministic game-level splits, disk-backed deduplication,
+manifest generation, a smoothed rating-aware frequency policy, and held-out
+accuracy/NLL reports by Elo band. The 100,000-game real-data milestone and
+baseline comparisons have not been run.
 Planned tech stack
 Technology choices are provisional and will be finalized during implementation.
 Area	Tools / libraries	Role
@@ -162,6 +207,10 @@ Out of scope for the initial release: a general-purpose playing engine, endgame 
 
 Because game distributions shift and rare positions contain little data, the system will need calibration, uncertainty handling, and periodic re-evaluation. Its recommendations should be treated as preparation guidance, not proof that an opening guarantees victory.
 Repository status
-This repository is currently a project specification and implementation roadmap. Code, datasets, benchmarks, trained weights, and usage instructions will be added as development proceeds. Large raw game archives and model checkpoints should not be committed directly to Git.
+This repository contains the initial data/statistical-baseline implementation,
+automated tests, a synthetic demo fixture, and the longer-term roadmap. It has
+no real-game benchmark results or trained neural weights yet. Large raw game
+archives, generated datasets, and model checkpoints should not be committed
+directly to Git.
 Acknowledgments and inspiration
 Inspired by the practical, human-focused opening-preparation philosophy of Lotus Chess, and informed by research into Maia, Maia3, neural chess models, and classical chess-engine analysis. This is an independent project and is not affiliated with those teams.

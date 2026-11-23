@@ -15,6 +15,9 @@ dependencies = [
     "python-chess>=1.999,<2",
 ]
 
+[project.scripts]
+chessformer = "chessformer.cli:main"
+
 [project.optional-dependencies]
 data = ["polars>=1.0,<2", "pyarrow>=16,<22", "zstandard>=0.23,<0.26"]
 ml = ["torch>=2.5,<3", "tensorboard>=2.18,<3"]

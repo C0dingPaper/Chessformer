@@ -1,0 +1,415 @@
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "1"]
+[White "DemoWhite1"]
+[Black "DemoBlack1"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "2"]
+[White "DemoWhite2"]
+[Black "DemoBlack2"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "3"]
+[White "DemoWhite3"]
+[Black "DemoBlack3"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "4"]
+[White "DemoWhite4"]
+[Black "DemoBlack4"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "5"]
+[White "DemoWhite5"]
+[Black "DemoBlack5"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "6"]
+[White "DemoWhite6"]
+[Black "DemoBlack6"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "7"]
+[White "DemoWhite7"]
+[Black "DemoBlack7"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "8"]
+[White "DemoWhite8"]
+[Black "DemoBlack8"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "9"]
+[White "DemoWhite9"]
+[Black "DemoBlack9"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "10"]
+[White "DemoWhite10"]
+[Black "DemoBlack10"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "11"]
+[White "DemoWhite11"]
+[Black "DemoBlack11"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "12"]
+[White "DemoWhite12"]
+[Black "DemoBlack12"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "13"]
+[White "DemoWhite13"]
+[Black "DemoBlack13"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "14"]
+[White "DemoWhite14"]
+[Black "DemoBlack14"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "15"]
+[White "DemoWhite15"]
+[Black "DemoBlack15"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "16"]
+[White "DemoWhite16"]
+[Black "DemoBlack16"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "17"]
+[White "DemoWhite17"]
+[Black "DemoBlack17"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "18"]
+[White "DemoWhite18"]
+[Black "DemoBlack18"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "19"]
+[White "DemoWhite19"]
+[Black "DemoBlack19"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "20"]
+[White "DemoWhite20"]
+[Black "DemoBlack20"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "21"]
+[White "DemoWhite21"]
+[Black "DemoBlack21"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "22"]
+[White "DemoWhite22"]
+[Black "DemoBlack22"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "23"]
+[White "DemoWhite23"]
+[Black "DemoBlack23"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "24"]
+[White "DemoWhite24"]
+[Black "DemoBlack24"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "25"]
+[White "DemoWhite25"]
+[Black "DemoBlack25"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "26"]
+[White "DemoWhite26"]
+[Black "DemoBlack26"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "27"]
+[White "DemoWhite27"]
+[Black "DemoBlack27"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "28"]
+[White "DemoWhite28"]
+[Black "DemoBlack28"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "29"]
+[White "DemoWhite29"]
+[Black "DemoBlack29"]
+[WhiteElo "1200"]
+[BlackElo "1300"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "30"]
+[White "DemoWhite30"]
+[Black "DemoBlack30"]
+[WhiteElo "2000"]
+[BlackElo "2100"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "31"]
+[White "DemoWhite31"]
+[Black "DemoBlack31"]
+[WhiteElo "1600"]
+[BlackElo "1700"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 1/2-1/2
+
+[Event "Synthetic demo - not real games"]
+[Site "?"]
+[Date "2026.01.01"]
+[Round "32"]
+[White "DemoWhite32"]
+[Black "DemoBlack32"]
+[WhiteElo "1800"]
+[BlackElo "1900"]
+[TimeControl "600+0"]
+[Result "1/2-1/2"]
+
+1. Nf3 d5 2. g3 Nf6 3. Bg2 e6 4. O-O Be7 1/2-1/2

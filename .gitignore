@@ -11,6 +11,7 @@ __pycache__/
 checkpoints/*.pt
 checkpoints/*.pth
 checkpoints/*.ckpt
+checkpoints/*.json
 runs/
 wandb/
 
@@ -20,6 +21,7 @@ data/*
 *.parquet
 *.pgn
 *.pgn.zst
+!examples/*.pgn
 
 # OS / editor
 .DS_Store
